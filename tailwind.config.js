@@ -3,28 +3,18 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  // content: ['./**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './pages/**/*.{js,jsx,ts,tsx,md,mdx}',
+    './components/**/*.{js,jsx,ts,tsx,md,mdx}',
+  ],
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...fontFamily.sans],
+        sans: ['Montserrat', ...fontFamily.sans],
+        mono: ['"Red Hat Mono"', ...fontFamily.mono],
       },
-      colors: {
-        primary: {
-          // Customize it on globals.css :root
-          50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
-          100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
-          200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
-          300: 'rgb(var(--tw-color-primary-300) / <alpha-value>)',
-          400: 'rgb(var(--tw-color-primary-400) / <alpha-value>)',
-          500: 'rgb(var(--tw-color-primary-500) / <alpha-value>)',
-          600: 'rgb(var(--tw-color-primary-600) / <alpha-value>)',
-          700: 'rgb(var(--tw-color-primary-700) / <alpha-value>)',
-          800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
-          900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
-        },
-        dark: '#222222',
-      },
+      colors: {},
       keyframes: {
         flicker: {
           '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
@@ -52,5 +42,51 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          primary: '#3dcea0',
+          secondary: '#21936e',
+          accent: '#9e9e9e',
+          neutral: '#0c1110',
+          'base-100': '#cae2db',
+          info: '#5e9bd4',
+          success: '#0f5c2e',
+          warning: '#df9a11',
+          error: '#f07f75',
+
+          '--rounded-box': '0.25rem',
+          '--rounded-btn': '0.125rem',
+          '--rounded-badge': '0.125rem',
+          '--animation-btn': '0',
+          '--animation-input': '0',
+          '--btn-focus-scale': '1',
+          '--tab-radius': '0',
+        },
+      },
+      {
+        dark: {
+          primary: '#3dcea0',
+          secondary: '#21936e',
+          accent: '#9e9e9e',
+          neutral: '#cae2db',
+          'base-100': '#0c1110',
+          info: '#5e9bd4',
+          success: '#0f5c2e',
+          warning: '#df9a11',
+          error: '#f07f75',
+
+          '--rounded-box': '0.25rem',
+          '--rounded-btn': '0.125rem',
+          '--rounded-badge': '0.125rem',
+          '--animation-btn': '0',
+          '--animation-input': '0',
+          '--btn-focus-scale': '1',
+          '--tab-radius': '0',
+        },
+      },
+    ],
+  },
 };

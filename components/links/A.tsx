@@ -1,17 +1,16 @@
 import Link, { LinkProps } from 'next/link';
 import * as React from 'react';
 
-import clsxm from '@/lib/clsxm';
-
 export type UnstyledLinkProps = {
   href: string;
   children: React.ReactNode;
   openNewTab?: boolean;
+  link?: boolean;
   className?: string;
   nextLinkProps?: Omit<LinkProps, 'href'>;
 } & React.ComponentPropsWithRef<'a'>;
 
-const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
+const A = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
   ({ children, href, openNewTab, className, nextLinkProps, ...rest }, ref) => {
     const isNewTab =
       openNewTab !== undefined
@@ -35,7 +34,9 @@ const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
         rel='noopener noreferrer'
         href={href}
         {...rest}
-        className={clsxm('cursor-newtab', className)}
+        // TODO cursor-newtab is overwritten by `btn` and `link` styles
+        // className={`${className} cursor-newtab `}
+        className={className}
       >
         {children}
       </a>
@@ -43,4 +44,4 @@ const UnstyledLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
   }
 );
 
-export default UnstyledLink;
+export default A;

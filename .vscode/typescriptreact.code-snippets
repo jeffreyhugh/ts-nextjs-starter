@@ -1,4 +1,13 @@
 {
+  "//eslint-disable-next-line no-console": {
+    "prefix": "nc",
+    "body": ["//eslint-disable-next-line no-console"]
+  },
+  "//eslint-disable-next-line @typescript-eslint/no-explicit-any": {
+    "prefix": "nany",
+    "body": ["//eslint-disable-next-line @typescript-eslint/no-explicit-any"]
+  },
+
   //#region  //*=========== React ===========
   "import React": {
     "prefix": "ir",
@@ -85,10 +94,10 @@
       "import * as React from 'react';\n",
       "import Layout from '@/components/layout/Layout';",
       "import Seo from '@/components/Seo';\n",
-      "export default function ${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page() {",
+      "export default function Page() {",
       "  return (",
       "    <Layout>",
-      "      <Seo templateTitle='${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}' />\n",
+      "      <Seo templateTitle='${1}' />\n",
       "      <main>\n",
       "        <section className=''>",
       "          <div className='layout py-20 min-h-screen'>",
@@ -98,20 +107,40 @@
       "      </main>",
       "    </Layout>",
       "  )",
-      "}"
+      "}\n"
     ]
   },
   "Next API": {
     "prefix": "napi",
     "body": [
       "import { NextApiRequest, NextApiResponse } from 'next';\n",
-      "export default async function ${1:${TM_FILENAME_BASE}}(req: NextApiRequest, res: NextApiResponse) {",
+      "export default async function Route(req: NextApiRequest, res: NextApiResponse) {",
       "  if (req.method === 'GET') {",
       "    res.status(200).json({ name: 'Bambang' });",
       "  } else {",
       "    res.status(405).json({ message: 'Method Not Allowed' });",
       "  }",
-      "}"
+      "}\n"
+    ]
+  },
+  "MDX": {
+    "prefix": "nmdx",
+    "body": [
+      "import Layout from '@/components/layout/Layout';",
+      "import Seo from '@/components/Seo';\n",
+      "$0\n",
+      "export default ({ children }) => (",
+      "  <Layout>",
+      "    <Seo templateTitle='${1}' />",
+      "    <main>",
+      "      <section className=''>",
+      "        <div className='layout lg:proxe-xl prose min-h-screen py-20'>",
+      "          {children}",
+      "        </div>",
+      "      </section>",
+      "    </main>",
+      "  </Layout>",
+      ");\n"
     ]
   },
   "Get Static Props": {

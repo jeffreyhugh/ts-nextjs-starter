@@ -18,9 +18,14 @@ class MyDocument extends Document {
         <Head>
           <link
             rel='preload'
-            href='/fonts/inter-var-latin.woff2'
+            href='/fonts/Montserrat.ttf'
             as='font'
-            type='font/woff2'
+            crossOrigin='anonymous'
+          />
+          <link
+            rel='preload'
+            href='/fonts/RedHatMono.ttf'
+            as='font'
             crossOrigin='anonymous'
           />
         </Head>

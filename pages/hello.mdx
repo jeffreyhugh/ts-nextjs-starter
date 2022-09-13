@@ -1,0 +1,23 @@
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
+
+# Hello, world
+
+This is a test
+
+<div className='btn btn-accent'>Hello, world!</div>
+
+test
+
+export default ({ children }) => (
+  <Layout>
+    <Seo templateTitle='Hello' />
+    <main>
+      <section className=''>
+        <div className='layout prose min-h-screen py-20 lg:prose-xl'>
+          {children}
+        </div>
+      </section>
+    </main>
+  </Layout>
+);
