@@ -1,6 +1,16 @@
+import { MDXProvider } from '@mdx-js/react';
 import { AppProps } from 'next/app';
+import { ReactNode } from 'react';
+import toast, { ToastBar, Toaster } from 'react-hot-toast';
+import { FiX } from 'react-icons/fi';
 
 import '@/styles/globals.css';
+
+import useTheme from '@/lib/hooks/useTheme';
+
+import InlineCode from '@/components/mdx/Code';
+
+import { dark, light } from '@/constant/colors';
 
 /**
  * !STARTERCONF info
@@ -8,7 +18,60 @@ import '@/styles/globals.css';
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const [theme] = useTheme();
+
+  const components = {
+    code: InlineCode,
+    pre: ({ children }: { children?: ReactNode }) => <div>{children}</div>,
+  };
+
+  return (
+    <MDXProvider components={components}>
+      <Toaster
+        toastOptions={{
+          style: {
+            borderRadius: 'var(--rounded-btn, 0.5rem)',
+            backgroundColor: 'hsl(var(--n) / 1)',
+            color: 'hsl(var(--nc) / 1)',
+          },
+          success: {
+            iconTheme: {
+              primary: theme === 'light' ? light.success : dark.success,
+              secondary:
+                theme === 'light' ? light['base-100'] : dark['base-100'],
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: theme === 'light' ? light.error : dark.error,
+              secondary:
+                theme === 'light' ? light['base-100'] : dark['base-100'],
+            },
+          },
+        }}
+      >
+        {(t) => (
+          <ToastBar toast={t}>
+            {({ icon, message }) => (
+              <>
+                {icon}
+                {message}
+                {t.type !== 'loading' && (
+                  <button
+                    className='btn btn-ghost btn-circle btn-xs m-0 p-0'
+                    onClick={() => toast.dismiss(t.id)}
+                  >
+                    <FiX />
+                  </button>
+                )}
+              </>
+            )}
+          </ToastBar>
+        )}
+      </Toaster>
+      <Component {...pageProps} className='bg-base-100' />
+    </MDXProvider>
+  );
 }
 
 export default MyApp;

@@ -1,3 +1,3 @@
 export const Prose = ({ children }: { children: JSX.Element }) => (
-  <article className='prose xl:prose-xl'>{children}</article>
+  <article className='prose lg:prose-lg'>{children}</article>
 );

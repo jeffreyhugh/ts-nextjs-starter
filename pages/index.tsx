@@ -23,9 +23,9 @@ export default function HomePage() {
                 <BigLogo />
                 <h1 className='mt-4 text-2xl md:text-4xl'>Web Starter</h1>
                 <div className='mt-4 flex max-w-md flex-wrap gap-2 text-lg md:text-xl'>
-                  Next.js | TypeScript | DaisyUI | Supabase | MDX
+                  Next.js, TypeScript, DaisyUI, Supabase, MDX, React Hot Toast
                 </div>
-                <div className='mt-4 flex flex-col gap-2 md:flex-row'>
+                <div className='mt-4 flex flex-col flex-wrap justify-evenly gap-2 md:flex-row'>
                   <A
                     className='btn'
                     href='https://github.com/jeffreyhugh/starter'
