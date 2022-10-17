@@ -2,8 +2,8 @@ import Link, { LinkProps } from 'next/link';
 import * as React from 'react';
 
 export type UnstyledLinkProps = {
-  href: string;
-  children: React.ReactNode;
+  href?: string;
+  children?: React.ReactNode;
   openNewTab?: boolean;
   link?: boolean;
   className?: string;
@@ -19,7 +19,7 @@ const A = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
 
     if (!isNewTab) {
       return (
-        <Link href={href} {...nextLinkProps}>
+        <Link href={href || ''} {...nextLinkProps}>
           <a ref={ref} {...rest} className={className}>
             {children}
           </a>

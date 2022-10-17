@@ -1,0 +1,202 @@
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
+import toast from 'react-hot-toast';
+import { SmallLogo } from '@/components/Logo';
+import { FiAlertTriangle, FiCheck, FiX } from 'react-icons/fi';
+
+# Tech Stack
+
+## [Next.js](https://next.js)
+
+## [TypeScript](https://typescriptlang.org)
+
+## [DaisyUI](https://daisyui.com)
+
+DaisyUI utilizes [TailwindCSS](https://tailwindcss.com) to make beautiful components.
+[See the full list of components](https://daisyui.com/components).
+
+```jsx
+<div className='tooltip tooltip-right' data-tip="Who's there?">
+  <button className='btn' onClick={() => toast('Hatch', { icon: '🤧' })}>
+    Knock knock
+  </button>
+</div>
+```
+
+<div className='tooltip tooltip-right' data-tip="Who's there?">
+  <button className='btn' onClick={() => toast('Hatch', { icon: '🤧' })}>
+    Knock knock
+  </button>
+</div>
+
+## [DaisyUI Themes](https://daisyui.com/docs/themes)
+
+Themes need to be updated in `constant/colors.ts` and in `tailwind.config.js`.
+Once updated there, additional colors (content and focused background) are generated automatically.
+
+## [Supabase](https://supabase.com)
+
+Supabase is the free, open-source alternative to Firebase.
+It can handle storage, auth, realtime, and much more.
+
+## [MDX](https://mdxjs.com)
+
+MDX is a superset of Markdown that allows rendering of JSX components.
+
+```mdx
+<div className='alert alert-warning'>
+  <div>
+    <FiAlertTriangle className='mr-2' />
+    <span>Inline MDX elements will cause a hydration mismatch unless the accompanying text is wrapped in `<span>` tags and those `<span>` tags are wrapped in a `<div>`.</span>
+  </div>
+</div>
+```
+
+<div className='alert alert-warning'>
+  <div>
+    <FiAlertTriangle className='mr-2 w-8' />
+    <span>Inline MDX elements will cause a hydration mismatch unless the accompanying text is wrapped in `<span>` tags and those `<span>` tags are wrapped in a `<div>`.</span>
+  </div>
+</div>
+
+Also, headers automatically get anchor links!
+Hover any header to see it in action.
+
+## [React Hot Toast](https://react-hot-toast.com)
+
+```javascript
+import toast from 'react-hot-toast';
+
+toast.success('Looks good!');
+toast.error('Something went wrong');
+```
+
+<div className='flex gap-2'>
+  <button className='btn' onClick={() => toast.success('Looks good!')}>
+    <FiCheck className='mr-2' />
+    Success
+  </button>
+  <button className='btn' onClick={() => toast.error('Something went wrong')}>
+    <FiX className='mr-2' />
+    Error
+  </button>
+</div>
+
+RHT can do more! [Check out their website](https://react-hot-toast.com).
+
+## [Default Open Graph](https://github.com/theodorusclarence/og)
+
+Automatically generate OG images and meta using [Theodorus Clarence](https://theodorusclarence.com)'s OG generator.
+
+# Dev Tools
+
+## Snippets
+
+Theodorus Clarence created many useful snippets to accelerate development and keep pages consistent.
+Below are the ones I use most, but there are more in `.vscode/typescriptreact.code-snippets`.
+
+```javascript
+// nc
+
+//eslint-disable-next-line no-console
+```
+
+```javascript
+// nany
+
+//eslint-disable-next-line @typescript-eslint/no-explicit-any
+```
+
+```jsx
+// np
+
+import * as React from 'react';
+
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
+
+export default function Page() {
+  return (
+    <Layout>
+      <Seo templateTitle='' />
+
+      <main className='flex flex-grow'>
+        <section className='flex flex-grow'>
+          <div className='layout min-h-screen py-20'></div>
+        </section>
+      </main>
+    </Layout>
+  );
+}
+```
+
+```javascript
+// napi
+
+import { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function Route(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'GET') {
+    res.status(200).json({ name: 'Bambang' });
+  } else {
+    res.status(405).json({ message: 'Method Not Allowed' });
+  }
+}
+```
+
+```javascript
+// nmdx
+
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
+
+export default ({ children }) => (
+  <Layout>
+    <Seo templateTitle='' />
+    <main>
+      <section className=''>
+        <div className='layout prose lg:prose-lg'>{children}</div>
+      </section>
+    </main>
+  </Layout>
+);
+```
+
+## Custom Anchor Tags
+
+No longer do you need to worry about `import Link from next/link` or `target="_blank"`.
+Just use an `<A>` tag.
+
+Internal links (i.e. routes that use CSR) will be automatically wrapped in a `<Link>` tag.
+External links will open in a new tab.
+
+(It works in MDX, too!)
+
+```jsx
+() => (Go to <A href="https://github.com">GitHub</A> or go <A href="/">Home</A>);
+```
+
+```md
+Go to [GitHub](https://github.com) or go [home](/)
+```
+
+Go to [GitHub](https://github.com) or go [home](/)
+
+## [Prettier](https://prettier.io)
+
+Automatically format your code.
+
+## GitHub Actions
+
+Lint code on push.
+
+export default ({ children }) => (
+  <Layout>
+    <Seo templateTitle='Features' />
+    <main>
+      <section className=''>
+        <div className='layout prose mt-6 lg:prose-lg'>{children}</div>
+      </section>
+    </main>
+  </Layout>
+);

@@ -4,7 +4,7 @@ import ThemeChanger from '@/components/ThemeChanger';
 
 export default function Header() {
   return (
-    <div className='navbar sticky top-0 border-b border-b-neutral/10 p-4 backdrop-blur-md'>
+    <div className='navbar sticky top-0 z-50 border-b border-b-neutral/10 bg-white/10 p-4 backdrop-blur-md'>
       <div className='flex w-full justify-between'>
         <A className='btn btn-ghost normal-case' href='/'>
           <SmallLogo />

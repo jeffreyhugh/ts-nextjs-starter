@@ -32,9 +32,9 @@ const InlineCode = ({
 }) => (
   <span className={clsxm('font-mono text-secondary', className)} {...rest}>
     <code>
-      <span className='select-none'>`</span>
+      <span className='-ml-2 select-none'>`</span>
       {children}
-      <span className='select-none'>`</span>
+      <span className='-mr-2 select-none'>`</span>
     </code>
   </span>
 );
@@ -47,16 +47,6 @@ const CodeBlock = ({
   children?: ReactNode;
   className?: string;
 }) => {
-  // <div className={clsxm('mockup-code', className)} {...rest}>
-  //   {children
-  //     ?.toString()
-  //     .split('\n')
-  //     .map((child, i) => (
-  //       <pre key={i} data-prefix={i + 1} className='m-0'>
-  //         <code>{child}</code>
-  //       </pre>
-  //     ))}
-  // </div>
   const r = /\s?language-([A-Za-z0-9]+)/gi;
   const matches = className?.match(r);
   const language = (matches && matches[0].split('-')[1]) || '';

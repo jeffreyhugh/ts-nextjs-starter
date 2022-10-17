@@ -1,3 +1,5 @@
+// !STARTERCONF update colors
+
 export const light = {
   primary: '#3dcea0',
   secondary: '#21936e',

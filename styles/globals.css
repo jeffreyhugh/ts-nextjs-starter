@@ -12,4 +12,11 @@
     max-width: 68.75rem;
     @apply mx-auto w-11/12;
   }
+
+  .anchor {
+    display: block;
+    position: relative;
+    top: -20rem;
+    visibility: hidden;
+  }
 }

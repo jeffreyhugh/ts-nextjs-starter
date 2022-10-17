@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { FiGithub, FiHelpCircle } from 'react-icons/fi';
 
 import Layout from '@/components/layout/Layout';
 import A from '@/components/links/A';
@@ -23,14 +24,20 @@ export default function HomePage() {
                 <BigLogo />
                 <h1 className='mt-4 text-2xl md:text-4xl'>Web Starter</h1>
                 <div className='mt-4 flex max-w-md flex-wrap gap-2 text-lg md:text-xl'>
-                  Next.js, TypeScript, DaisyUI, Supabase, MDX, React Hot Toast
+                  Next.js, TypeScript, DaisyUI, TailwindCSS, Supabase, MDX,
+                  React Hot Toast, and more
                 </div>
-                <div className='mt-4 flex flex-col flex-wrap justify-evenly gap-2 md:flex-row'>
+                <div className='btn-group btn-group-vertical mt-6'>
+                  <A className='btn' href='/features'>
+                    <FiHelpCircle className='mr-2' />
+                    All features
+                  </A>
                   <A
                     className='btn'
                     href='https://github.com/jeffreyhugh/starter'
                   >
-                    Check out the repository
+                    <FiGithub className='mr-2' />
+                    See it on GitHub
                   </A>
                   <A
                     className='btn'

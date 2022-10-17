@@ -3,7 +3,6 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // content: ['./**/*.{js,jsx,ts,tsx}'],
   content: [
     './pages/**/*.{js,jsx,ts,tsx,md,mdx}',
     './components/**/*.{js,jsx,ts,tsx,md,mdx}',
@@ -14,7 +13,14 @@ module.exports = {
         sans: ['Montserrat', ...fontFamily.sans],
         mono: ['"Red Hat Mono"', ...fontFamily.mono],
       },
-      colors: {},
+      colors: {
+        dark: {
+          100: '#0c1110',
+        },
+        light: {
+          100: '#cae2db',
+        },
+      },
       keyframes: {
         flicker: {
           '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
@@ -45,6 +51,7 @@ module.exports = {
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
     themes: [
+      // !STARTERCONF update colors
       {
         light: {
           primary: '#3dcea0',
@@ -56,6 +63,8 @@ module.exports = {
           success: '#0f5c2e',
           warning: '#df9a11',
           error: '#f07f75',
+          light: '#cae2db',
+          dark: '#0c1110',
 
           '--rounded-box': '0.25rem',
           '--rounded-btn': '0.125rem',
@@ -77,6 +86,8 @@ module.exports = {
           success: '#0f5c2e',
           warning: '#df9a11',
           error: '#f07f75',
+          light: '#cae2db',
+          dark: '#0c1110',
 
           '--rounded-box': '0.25rem',
           '--rounded-btn': '0.125rem',

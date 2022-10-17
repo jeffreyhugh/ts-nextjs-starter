@@ -8,10 +8,12 @@ import { FiX } from 'react-icons/fi';
 
 import '@/styles/globals.css';
 
+import clsxm from '@/lib/clsxm';
 import useTheme from '@/lib/hooks/useTheme';
 
 import A from '@/components/links/A';
 import InlineCode from '@/components/mdx/Code';
+import { H1, H2, H3, H4 } from '@/components/mdx/Header';
 
 import { dark, light } from '@/constant/colors';
 
@@ -28,16 +30,29 @@ function MyApp({ Component, pageProps }: AppProps) {
     pre: ({ children }: { children?: ReactNode }) => <div>{children}</div>,
     a: ({
       children,
+      className,
       href,
       ...rest
     }: {
       children?: ReactNode;
+      className?: string;
       href?: string;
     }) => (
-      <A href={href || ''} {...rest}>
+      <A
+        className={clsxm(className, 'text-inherit')}
+        style={{
+          fontWeight: 'inherit',
+        }}
+        href={href || ''}
+        {...rest}
+      >
         {children}
       </A>
     ),
+    h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
   };
 
   // !STARTERCONF consider using TypeScript for this

@@ -18,7 +18,7 @@
     "format:check": "prettier -c .",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "prepare": "husky install",
-    "precommit": "yarn lint:strict && yarn typecheck && yarn format:check"
+    "precommit": "yarn format && yarn lint:strict && yarn typecheck && yarn format:check"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.1.3",
