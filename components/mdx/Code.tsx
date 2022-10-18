@@ -30,7 +30,7 @@ const InlineCode = ({
   children?: ReactNode;
   className?: string;
 }) => (
-  <span className={clsxm('font-mono text-secondary', className)} {...rest}>
+  <span className={clsxm('font-mono', className)} {...rest}>
     <code>
       <span className='-ml-2 select-none'>`</span>
       {children}
