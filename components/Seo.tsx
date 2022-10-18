@@ -5,9 +5,9 @@ import { openGraph } from '@/lib/helper';
 
 // !STARTERCONF Change these default meta
 const defaultMeta = {
-  title: 'Next.js TS Starter | Jeffrey Hugh',
-  siteName: 'Next.js TS Starter | Jeffrey Hugh',
-  description: 'A starter for Next.js, Tailwind CSS, TypeScript, and DaisyUI',
+  title: 'Starter | Jeffrey Hugh',
+  siteName: 'Starter | Jeffrey Hugh',
+  description: 'Template with Next.js, TypeScript, DaisyUI, and more',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
   url: 'https://jh.ms',
   type: 'website',
