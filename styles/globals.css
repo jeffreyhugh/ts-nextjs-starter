@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('../public/fonts/Montserrat/Montserrat.css');
+@import url('../public/fonts/RedHatMono/RedHatMono.css');
+
 @layer base {
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;

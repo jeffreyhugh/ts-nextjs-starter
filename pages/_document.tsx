@@ -15,20 +15,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <Head>
-          <link
-            rel='preload'
-            href='/fonts/Montserrat.ttf'
-            as='font'
-            crossOrigin='anonymous'
-          />
-          <link
-            rel='preload'
-            href='/fonts/RedHatMono.ttf'
-            as='font'
-            crossOrigin='anonymous'
-          />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />

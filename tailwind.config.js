@@ -12,6 +12,8 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat', ...fontFamily.sans],
         mono: ['"Red Hat Mono"', ...fontFamily.mono],
+        // sans: '"Montserrat Thin"',
+        // mono: '"Red Hat Mono"',
       },
       colors: {
         dark: {

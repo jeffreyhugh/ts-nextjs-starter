@@ -22,7 +22,9 @@ export default function HomePage() {
             <div className='hero-content text-center'>
               <div className='flex max-w-md flex-col items-center justify-center'>
                 <BigLogo />
-                <h1 className='mt-4 text-2xl md:text-4xl'>Web Starter</h1>
+                <h1 className='mt-4 text-2xl font-bold md:text-4xl'>
+                  Web Starter
+                </h1>
                 <div className='mt-4 flex max-w-md flex-wrap gap-2 text-lg md:text-xl'>
                   Next.js, TypeScript, DaisyUI, TailwindCSS, Supabase, MDX,
                   React Hot Toast, and more
