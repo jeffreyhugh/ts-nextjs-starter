@@ -2,7 +2,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider, useTheme } from 'next-themes';
 import { ReactNode, useState } from 'react';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 import { FiX } from 'react-icons/fi';
@@ -10,7 +10,6 @@ import { FiX } from 'react-icons/fi';
 import '@/styles/globals.css';
 
 import clsxm from '@/lib/clsxm';
-import useTheme from '@/lib/hooks/useTheme';
 
 import A from '@/components/links/A';
 import InlineCode from '@/components/mdx/Code';
@@ -24,7 +23,7 @@ import { dark, light } from '@/constant/colors';
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme] = useTheme();
+  const { theme } = useTheme();
 
   const components = {
     code: InlineCode,
