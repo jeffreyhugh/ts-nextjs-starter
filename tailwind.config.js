@@ -11,7 +11,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Montserrat', ...fontFamily.sans],
-        mono: ['"Red Hat Mono"', ...fontFamily.mono],
+        // mono: ['"Red Hat Mono"', ...fontFamily.mono],
+        mono: ['"Meslo LG S"', ...fontFamily.mono],
         // sans: '"Montserrat Thin"',
         // mono: '"Red Hat Mono"',
       },
