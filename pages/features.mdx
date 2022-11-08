@@ -3,6 +3,7 @@ import Seo from '@/components/Seo';
 import toast from 'react-hot-toast';
 import { SmallLogo } from '@/components/Logo';
 import { FiAlertTriangle, FiCheck, FiX } from 'react-icons/fi';
+import { TbAlertTriangle, TbCheck, TbX } from 'react-icons/tb';
 
 # Tech Stack
 
@@ -49,7 +50,7 @@ MDX is a superset of Markdown that allows rendering of JSX components.
 ```jsx
 <div className='alert alert-warning'>
   <div>
-    <FiAlertTriangle className='mr-2' />
+    <TbAlertTriangle className='mr-2 w-8' />
     <span>Inline MDX elements will cause a hydration mismatch unless the accompanying text is wrapped in `<span>` tags and those `<span>` tags are wrapped in a `<div>`.</span>
   </div>
 </div>
@@ -57,7 +58,7 @@ MDX is a superset of Markdown that allows rendering of JSX components.
 
 <div className='alert alert-warning'>
   <div>
-    <FiAlertTriangle className='mr-2 w-8' />
+    <TbAlertTriangle className='mr-2 w-8' />
     <span>Inline MDX elements will cause a hydration mismatch unless the accompanying text is wrapped in `<span>` tags and those `<span>` tags are wrapped in a `<div>`.</span>
   </div>
 </div>
@@ -76,11 +77,11 @@ toast.error('Something went wrong');
 
 <div className='flex gap-2'>
   <button className='btn' onClick={() => toast.success('Looks good!')}>
-    <FiCheck className='mr-2' />
+    <TbCheck className='mr-2' />
     Success
   </button>
   <button className='btn' onClick={() => toast.error('Something went wrong')}>
-    <FiX className='mr-2' />
+    <TbX className='mr-2' />
     Error
   </button>
 </div>

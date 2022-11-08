@@ -8,7 +8,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { ReactNode, useState } from 'react';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
-import { FiX } from 'react-icons/fi';
+import { TbX } from 'react-icons/tb';
 
 import '@/styles/globals.css';
 
@@ -106,7 +106,7 @@ function MyApp({
                         className='btn-ghost btn-xs btn-circle btn m-0 p-0'
                         onClick={() => toast.dismiss(t.id)}
                       >
-                        <FiX />
+                        <TbX />
                       </button>
                     )}
                   </>

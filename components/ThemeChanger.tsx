@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { FiMoon, FiSun } from 'react-icons/fi';
+import { TbMoon, TbSun } from 'react-icons/tb';
 
 import clsxm from '@/lib/clsxm';
 
@@ -17,7 +17,7 @@ export default function ThemeChanger(props: ThemeChangerProps) {
   return (
     <label
       className={clsxm(
-        'swap swap-rotate px-6',
+        'swap-rotate swap px-6',
         props.className,
         isMounted ? 'visible' : 'invisible'
       )}
@@ -27,8 +27,8 @@ export default function ThemeChanger(props: ThemeChangerProps) {
         onChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         checked={theme !== 'light'}
       />
-      <FiSun className='swap-on h-5 w-5' />
-      <FiMoon className='swap-off h-5 w-5' />
+      <TbSun className='swap-on h-5 w-5' />
+      <TbMoon className='swap-off h-5 w-5' />
     </label>
   );
 }

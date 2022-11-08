@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { FiLink } from 'react-icons/fi';
+import { TbLink } from 'react-icons/tb';
 
 function getAnchor(child: ReactNode): string {
   if (!child) {
@@ -30,7 +30,7 @@ export const H1 = ({ children }: { children?: ReactNode }) => {
         href={`#${anchor}`}
         className='absolute bottom-1/4 hidden -translate-x-6 pr-2 text-lg text-inherit group-hover:inline'
       >
-        <FiLink />
+        <TbLink />
       </a>
       {children}
     </h1>
@@ -46,7 +46,7 @@ export const H2 = ({ children }: { children?: ReactNode }) => {
         href={`#${anchor}`}
         className='absolute bottom-1/4 hidden -translate-x-6 pr-2 text-lg text-inherit group-hover:inline'
       >
-        <FiLink />
+        <TbLink />
       </a>
       {children}
     </h2>
@@ -62,7 +62,7 @@ export const H3 = ({ children }: { children?: ReactNode }) => {
         href={`#${anchor}`}
         className='absolute bottom-1/4 hidden -translate-x-6 pr-2 text-lg group-hover:inline'
       >
-        <FiLink />
+        <TbLink />
       </a>
       {children}
     </h3>
@@ -78,7 +78,7 @@ export const H4 = ({ children }: { children?: ReactNode }) => {
         href={`#${anchor}`}
         className='absolute bottom-1/4 hidden -translate-x-6 pr-2 text-lg group-hover:inline'
       >
-        <FiLink />
+        <TbLink />
       </a>
       {children}
     </h4>

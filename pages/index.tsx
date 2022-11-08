@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FiGithub, FiHelpCircle } from 'react-icons/fi';
+import { TbBrandGithub, TbBrandVercel, TbHelp } from 'react-icons/tb';
 
 import Layout from '@/components/layout/Layout';
 import A from '@/components/links/A';
@@ -31,24 +31,22 @@ export default function HomePage() {
                 </div>
                 <div className='btn-group btn-group-vertical mt-6'>
                   <A className='btn' href='/features'>
-                    <FiHelpCircle className='mr-2' />
+                    <TbHelp className='mr-2' />
                     All features
                   </A>
                   <A
                     className='btn'
                     href='https://github.com/jeffreyhugh/starter'
                   >
-                    <FiGithub className='mr-2' />
+                    <TbBrandGithub className='mr-2' />
                     See it on GitHub
                   </A>
                   <A
                     className='btn'
                     href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fjeffreyhugh%2Fstarter'
                   >
-                    <div>
-                      <div className='mask mask-triangle mr-2 h-4 w-4 bg-neutral-content' />
-                    </div>
-                    <p>Deploy on Vercel</p>
+                    <TbBrandVercel className='mr-2' />
+                    Deploy on Vercel
                   </A>
                 </div>
               </div>
