@@ -1,5 +1,8 @@
 import { MDXProvider } from '@mdx-js/react';
-import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
+import {
+  createBrowserSupabaseClient,
+  Session,
+} from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { AppProps } from 'next/app';
 import { ThemeProvider, useTheme } from 'next-themes';
@@ -22,7 +25,10 @@ import { dark, light } from '@/constant/colors';
  * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
  */
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({
+  Component,
+  pageProps,
+}: AppProps<{ initialSession: Session }>) {
   const { theme } = useTheme();
 
   const components = {
@@ -62,7 +68,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SessionContextProvider
       supabaseClient={supabaseClient}
-      initialSession={pageProps.initialSession}
+      initialSession={pageProps?.initialSession}
     >
       <ThemeProvider>
         <MDXProvider components={components}>
@@ -97,7 +103,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     {message}
                     {t.type !== 'loading' && (
                       <button
-                        className='btn btn-ghost btn-circle btn-xs m-0 p-0'
+                        className='btn-ghost btn-xs btn-circle btn m-0 p-0'
                         onClick={() => toast.dismiss(t.id)}
                       >
                         <FiX />
