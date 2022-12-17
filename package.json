@@ -21,7 +21,7 @@
     "precommit": "yarn format && yarn lint:strict && yarn typecheck && yarn format:check"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.1.5",
     "@next/mdx": "^12.3.4",
     "@supabase/auth-helpers-nextjs": "^0.4.5",
