@@ -1,8 +1,8 @@
+import Link from 'next/link';
 import * as React from 'react';
 import { TbBrandGithub, TbBrandVercel, TbHelp } from 'react-icons/tb';
 
 import Layout from '@/components/layout/Layout';
-import A from '@/components/links/A';
 import { BigLogo } from '@/components/Logo';
 import Seo from '@/components/Seo';
 
@@ -30,24 +30,24 @@ export default function HomePage() {
                   React Hot Toast, and more
                 </div>
                 <div className='btn-group btn-group-vertical mt-6'>
-                  <A className='btn' href='/features'>
+                  <Link className='btn' href='/features'>
                     <TbHelp className='mr-2' />
                     All features
-                  </A>
-                  <A
+                  </Link>
+                  <Link
                     className='btn'
                     href='https://github.com/jeffreyhugh/starter'
                   >
                     <TbBrandGithub className='mr-2' />
                     See it on GitHub
-                  </A>
-                  <A
+                  </Link>
+                  <Link
                     className='btn'
                     href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fjeffreyhugh%2Fstarter'
                   >
                     <TbBrandVercel className='mr-2' />
                     Deploy on Vercel
-                  </A>
+                  </Link>
                 </div>
               </div>
             </div>

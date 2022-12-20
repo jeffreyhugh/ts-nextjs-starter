@@ -1,15 +1,19 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const withMDX = require('@next/mdx')({
+import MDX from '@next/mdx';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
+
+const withMDX = MDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
     providerImportSource: '@mdx-js/react',
   },
 });
 
-module.exports = withMDX({
+export default withMDX({
   eslint: {
     dirs: ['src'],
   },

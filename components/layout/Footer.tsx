@@ -1,4 +1,4 @@
-import A from '@/components/links/A';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -6,9 +6,9 @@ export default function Footer() {
       <div>
         <p>
           &copy; {new Date().getFullYear()} by{' '}
-          <A className='link' href='https://jh.ms'>
+          <Link className='link' href='https://jh.ms'>
             Jeffrey Hugh
-          </A>
+          </Link>
         </p>
       </div>
     </footer>

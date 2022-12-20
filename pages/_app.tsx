@@ -5,16 +5,17 @@ import {
 } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { AppProps } from 'next/app';
+import Link from 'next/link';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { ReactNode, useState } from 'react';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 import { TbX } from 'react-icons/tb';
 
 import '@/styles/globals.css';
+import '@/styles/katex.css';
 
 import clsxm from '@/lib/clsxm';
 
-import A from '@/components/links/A';
 import InlineCode from '@/components/mdx/Code';
 import { H1, H2, H3, H4 } from '@/components/mdx/Header';
 
@@ -44,7 +45,7 @@ function MyApp({
       className?: string;
       href?: string;
     }) => (
-      <A
+      <Link
         className={clsxm(className, 'text-inherit')}
         style={{
           fontWeight: 'inherit',
@@ -53,7 +54,7 @@ function MyApp({
         {...rest}
       >
         {children}
-      </A>
+      </Link>
     ),
     h1: H1,
     h2: H2,
