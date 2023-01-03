@@ -100,7 +100,7 @@
       "      <Seo templateTitle='${1}' />\n",
       "      <main className='flex flex-grow'>\n",
       "        <section className='flex flex-grow'>",
-      "          <div className='layout py-20 min-h-screen'>",
+      "          <div className='layout'>",
       "            $0",
       "          </div>",
       "        </section>",

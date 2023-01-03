@@ -2,11 +2,52 @@ import { ReactNode } from 'react';
 import { TbLink } from 'react-icons/tb';
 
 function getAnchor(child: ReactNode): string {
+  if (Array.isArray(child)) {
+    return child.map((c) => getAnchor(c)).join('');
+  }
   if (!child) {
     return '';
   } else if (typeof child === 'object') {
     if ('props' in child) {
+      if ('className' in child.props) {
+        if (child.props.className.includes('katex')) {
+          const katexAnchor = getKatexAnchor(child.props.children);
+          //eslint-disable-next-line no-console
+          console.log(katexAnchor);
+          return katexAnchor;
+        } else {
+          return getAnchor(child.props.children);
+        }
+      }
       return getAnchor(child.props.children);
+    } else {
+      return '';
+    }
+  } else {
+    return (
+      child
+        .toString()
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, '')
+        .replace(/[ ]/g, '-') || ''
+    );
+  }
+}
+
+// This is janky AF but it "works"
+// Works in cases like `## Math with $\LaTeX$`
+// Does not work in cases like `$3x = 6$`
+// Due to oddities of how KaTeX renders stuff, if there are multiple sibling children, it can return an anchor like `katexkatexkatex`
+// If we're dealing with a KaTeX child, just figure out the anchor for the first child and it's "good enough" (fails if there are multiple children in one block)
+function getKatexAnchor(child: ReactNode): string {
+  if (Array.isArray(child)) {
+    return getKatexAnchor(child[0]);
+  }
+  if (!child) {
+    return '';
+  } else if (typeof child === 'object') {
+    if ('props' in child) {
+      return getKatexAnchor(child.props.children);
     } else {
       return '';
     }

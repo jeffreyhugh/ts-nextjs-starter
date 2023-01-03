@@ -66,7 +66,7 @@ MDX is a superset of Markdown that allows rendering of JSX components.
 Also, headers automatically get anchor links!
 Hover any header to see it in action.
 
-## [Math with KaTeX](https://katex.org)
+## [Math with $\KaTeX$](https://katex.org)
 
 $\TeX$-style equations can be rendered inline with a `$`, or as a block with a `$$`.
 
@@ -115,6 +115,13 @@ RHT can do more! [Check out their website](https://react-hot-toast.com).
 ## [Default Open Graph](https://github.com/theodorusclarence/og)
 
 Automatically generate OG images and meta using [Theodorus Clarence](https://theodorusclarence.com)'s OG generator.
+
+## [React Hook Form](https://react-hook-form.com)
+
+I've found RHF to be useful for dealing with custom JS forms.
+For an example, see [/features/forms](/features/forms).
+
+When you build a form with this stack, please **please** **_please_** build form components to reduce some of the bulk (e.g. `<Input />`).
 
 # Dev Tools
 
@@ -189,26 +196,6 @@ export default ({ children }) => (
   </Layout>
 );
 ```
-
-## Custom Anchor Tags
-
-No longer do you need to worry about `import Link from next/link` or `target="_blank"`.
-Just use an `<A>` tag.
-
-Internal links (i.e. routes that use CSR) will be automatically wrapped in a `<Link>` tag.
-External links will open in a new tab.
-
-(It works in MDX, too!)
-
-```jsx
-() => (Go to <A href="https://github.com">GitHub</A> or go <A href="/">Home</A>);
-```
-
-```md
-Go to [GitHub](https://github.com) or go [home](/)
-```
-
-Go to [GitHub](https://github.com) or go [home](/)
 
 ## [Prettier](https://prettier.io)
 

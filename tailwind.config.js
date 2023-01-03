@@ -11,10 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Montserrat', ...fontFamily.sans],
-        // mono: ['"Red Hat Mono"', ...fontFamily.mono],
         mono: ['"Meslo LG S"', ...fontFamily.mono],
-        // sans: '"Montserrat Thin"',
-        // mono: '"Red Hat Mono"',
       },
       colors: {
         dark: {
@@ -48,6 +45,9 @@ module.exports = {
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
+      },
+      spacing: {
+        128: '32rem',
       },
     },
   },

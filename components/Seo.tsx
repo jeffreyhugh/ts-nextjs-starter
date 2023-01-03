@@ -101,6 +101,7 @@ type Favicons = {
 };
 
 // !STARTERCONF this is the default favicon, you can generate your own from https://www.favicon-generator.org/ then replace the whole /public/favicon folder
+// !STARTERCONF I had to edit the `manifest.json` with a find/replace (find `/android` and replace with `/favicon/android`)
 const favicons: Array<Favicons> = [
   {
     rel: 'apple-touch-icon',

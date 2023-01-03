@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url('../public/fonts/Montserrat/Montserrat.css');
-/* @import url('../public/fonts/RedHatMono/RedHatMono.css'); */
 @import url('../public/fonts/MesloLGS/MesloLGS.css');
 
 @layer base {
