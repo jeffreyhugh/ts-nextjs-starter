@@ -11,10 +11,7 @@ function getAnchor(child: ReactNode): string {
     if ('props' in child) {
       if ('className' in child.props) {
         if (child.props.className.includes('katex')) {
-          const katexAnchor = getKatexAnchor(child.props.children);
-          //eslint-disable-next-line no-console
-          console.log(katexAnchor);
-          return katexAnchor;
+          return getKatexAnchor(child.props.children);
         } else {
           return getAnchor(child.props.children);
         }
