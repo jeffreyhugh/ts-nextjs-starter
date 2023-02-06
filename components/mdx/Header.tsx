@@ -25,7 +25,7 @@ function getAnchor(child: ReactNode): string {
       child
         .toString()
         .toLowerCase()
-        .replace(/[^a-z0-9 ]/g, '')
+        .replace(/[^a-z0-9\- ]/g, '')
         .replace(/[ ]/g, '-') || ''
     );
   }
