@@ -1,8 +1,9 @@
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import toast from 'react-hot-toast';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+import { Callout } from '@/components/mdx/Callout';
 import { SmallLogo } from '@/components/Logo';
-import { FiAlertTriangle, FiCheck, FiX } from 'react-icons/fi';
 import { TbAlertTriangle, TbCheck, TbX } from 'react-icons/tb';
 
 # Tech Stack
@@ -48,20 +49,16 @@ It can handle storage, auth, realtime, and much more.
 MDX is a superset of Markdown that allows rendering of JSX components.
 
 ```jsx
-<div className='alert alert-warning'>
-  <div>
-    <TbAlertTriangle className='mr-2 w-8' />
-    <span>Inline MDX elements will cause a hydration mismatch unless the accompanying text is wrapped in `<span>` tags and those `<span>` tags are wrapped in a `<div>`.</span>
-  </div>
-</div>
+import { Callout } from '@/components/mdx/Callout';
+
+<Callout type='warning'>
+  <span>Make sure to put callout children in a `<span>` so the `prose` class doesn't add padding.</span>
+</Callout>
 ```
 
-<div className='alert alert-warning'>
-  <div>
-    <TbAlertTriangle className='mr-2 w-8' />
-    <span>Inline MDX elements will cause a hydration mismatch unless the accompanying text is wrapped in `<span>` tags and those `<span>` tags are wrapped in a `<div>`.</span>
-  </div>
-</div>
+<Callout type='warning'>
+  <span>Make sure to put callout children in a `<span>` so the `prose` class doesn't add padding.</span>
+</Callout>
 
 Also, headers automatically get anchor links!
 Hover any header to see it in action.
@@ -215,7 +212,10 @@ export default ({ children }) => (
     <Seo templateTitle='Features' />
     <main>
       <section className=''>
-        <div className='layout prose mt-6 lg:prose-lg'>{children}</div>
+        <div className='layout'>
+          <Breadcrumbs />
+        </div>
+        <div className='layout min-h-c prose lg:prose-lg'>{children}</div>
       </section>
     </main>
   </Layout>

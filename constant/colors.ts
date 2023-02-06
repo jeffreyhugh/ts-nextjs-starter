@@ -6,10 +6,10 @@ export const light = {
   accent: '#9e9e9e',
   neutral: '#0c1110',
   'base-100': '#cae2db',
-  info: '#5e9bd4',
-  success: '#0f5c2e',
-  warning: '#df9a11',
-  error: '#f07f75',
+  info: '#37b3d2',
+  success: '#36d399',
+  warning: '#eebe44',
+  error: '#e8648b',
 };
 
 export const dark = {
@@ -18,8 +18,8 @@ export const dark = {
   accent: '#9e9e9e',
   neutral: '#cae2db',
   'base-100': '#0c1110',
-  info: '#5e9bd4',
-  success: '#0f5c2e',
-  warning: '#df9a11',
-  error: '#f07f75',
+  info: '#37b3d2',
+  success: '#36d399',
+  warning: '#eebe44',
+  error: '#e8648b',
 };

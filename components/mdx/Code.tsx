@@ -32,9 +32,9 @@ const InlineCode = ({
 }) => (
   <span className={clsxm('font-mono', className)} {...rest}>
     <code>
-      <span className='-ml-2 select-none'>`</span>
+      <span className='-ml-2 select-none no-underline'>`</span>
       {children}
-      <span className='-mr-2 select-none'>`</span>
+      <span className='-mr-2 select-none no-underline'>`</span>
     </code>
   </span>
 );

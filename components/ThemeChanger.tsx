@@ -17,7 +17,7 @@ export default function ThemeChanger(props: ThemeChangerProps) {
   return (
     <label
       className={clsxm(
-        'swap swap-rotate px-6',
+        'swap btn btn-ghost swap-rotate btn-square px-6',
         props.className,
         isMounted ? 'visible' : 'invisible'
       )}

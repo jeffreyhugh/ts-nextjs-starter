@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className='relative flex min-h-screen flex-col'>
       <Header />
-      <div className='pt-2 pb-20'>{children}</div>
+      <div className=''>{children}</div>
       <Footer />
     </div>
   );
