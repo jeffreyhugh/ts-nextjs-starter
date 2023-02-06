@@ -51,6 +51,7 @@ function MyApp({
           fontWeight: 'inherit',
         }}
         href={href || ''}
+        target={href && href.startsWith('/') ? '_self' : '_blank'}
         {...rest}
       >
         {children}

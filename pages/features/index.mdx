@@ -6,7 +6,7 @@ import { Callout } from '@/components/mdx/Callout';
 import { SmallLogo } from '@/components/Logo';
 import { TbAlertTriangle, TbCheck, TbX } from 'react-icons/tb';
 
-# Tech Stack
+# Features
 
 ## [Next.js](https://next.js)
 
@@ -51,13 +51,15 @@ MDX is a superset of Markdown that allows rendering of JSX components.
 ```jsx
 import { Callout } from '@/components/mdx/Callout';
 
-<Callout type='warning'>
-  <span>Make sure to put callout children in a `<span>` so the `prose` class doesn't add padding.</span>
-</Callout>
+<Callout type='info'>
+  You can optionally specify the type of a `<Callout />` as one of `info`,
+  `success`, `warning`, or `error`.
+</Callout>;
 ```
 
-<Callout type='warning'>
-  <span>Make sure to put callout children in a `<span>` so the `prose` class doesn't add padding.</span>
+<Callout type='info'>
+  You can optionally specify the type of a `<Callout />` as one of `info`,
+  `success`, `warning`, or `error`.
 </Callout>
 
 Also, headers automatically get anchor links!
@@ -118,9 +120,10 @@ Automatically generate OG images and meta using [Theodorus Clarence](https://the
 I've found RHF to be useful for dealing with custom JS forms.
 For an example, see [/features/forms](/features/forms).
 
-When you build a form with this stack, please **please** **_please_** build form components to reduce some of the bulk (e.g. `<Input />`).
-
-# Dev Tools
+<Callout type='warning'>
+  DaisyUI forms have a lot of functionality, but also a lot of bulk. Consider
+  adding a component when working with forms.
+</Callout>
 
 ## Snippets
 
@@ -194,6 +197,58 @@ export default ({ children }) => (
 );
 ```
 
+## CSS
+
+The `globals.css` file has several opinionated utility classes.
+
+```css
+/**
+ * `height-content`
+ * Use `h-c` for building non-scrollable pages that take up the whole screen
+ */
+.h-c {
+  height: calc(
+    100vh - (var(--h-header) + var(--h-breadcrumbs) + var(--h-footer))
+  );
+}
+
+/**
+ * `min-height-content`
+ * Use `min-h-c` for pretty much everything else
+ */
+.min-h-c {
+  min-height: calc(
+    100vh - (var(--h-header) + var(--h-breadcrumbs) + var(--h-footer))
+  );
+  margin-bottom: calc(var(--h-footer) + 2rem);
+}
+```
+
+<Callout type='info'>
+  The height classes are automatically applied when using the `np` and `nmdx`
+  snippets.
+</Callout>
+
+Use these classes if you want your headers to look the same as they do in `prose`.
+
+```css
+.h1 {
+  @apply text-4xl font-extrabold lg:text-5xl;
+}
+
+.h2 {
+  @apply text-2xl font-bold lg:text-3xl;
+}
+
+.h3 {
+  @apply text-xl font-semibold lg:text-2xl;
+}
+
+.h4 {
+  @apply text-base font-semibold lg:text-lg;
+}
+```
+
 ## [Prettier](https://prettier.io)
 
 Automatically format your code.
@@ -205,7 +260,7 @@ Lint code on push.
 ## [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 Commit messages require a tag to explain the purpose of the commit.
-The tag is most commonly either `feat:` or `fix:`, but there are more available tags in the docs.
+The tag is most commonly either `feat:` or `fix:`, but there are more tags in the docs.
 
 export default ({ children }) => (
   <Layout>

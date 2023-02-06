@@ -6,7 +6,11 @@ import title from 'title';
 export const Breadcrumbs = () => {
   const router = useRouter();
 
-  const pathArgs = router.asPath.split('/').splice(1);
+  const pathArgs = router.asPath
+    .split('/')
+    .splice(1)
+    .map((arg) => arg.split('?')[0]) // remove query params
+    .map((arg) => arg.split('#')[0]); // remove anchor
 
   const content = (v: string) =>
     isUUID(v) ? v.toLowerCase() : title(v.replaceAll('-', ' '));

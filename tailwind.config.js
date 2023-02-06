@@ -65,7 +65,7 @@ module.exports = {
           info: '#37b3d2',
           success: '#36d399',
           warning: '#eebe44',
-          error: '#e8648b',
+          error: '#db2b39',
           light: '#cae2db',
           dark: '#0c1110',
 
@@ -88,7 +88,7 @@ module.exports = {
           info: '#37b3d2',
           success: '#36d399',
           warning: '#eebe44',
-          error: '#e8648b',
+          error: '#db2b39',
           light: '#cae2db',
           dark: '#0c1110',
 

@@ -9,7 +9,7 @@ export const light = {
   info: '#37b3d2',
   success: '#36d399',
   warning: '#eebe44',
-  error: '#e8648b',
+  error: '#db2b39',
 };
 
 export const dark = {
@@ -21,5 +21,5 @@ export const dark = {
   info: '#37b3d2',
   success: '#36d399',
   warning: '#eebe44',
-  error: '#e8648b',
+  error: '#db2b39',
 };
