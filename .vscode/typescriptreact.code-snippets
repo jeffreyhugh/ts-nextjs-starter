@@ -108,7 +108,7 @@
       "        </section>",
       "      </main>",
       "    </Layout>",
-      "  )",
+      "  );",
       "}\n"
     ]
   },
@@ -128,6 +128,7 @@
   "MDX": {
     "prefix": "nmdx",
     "body": [
+      "import { Breadcrumbs } from @/components/layout/Breadcrumbs';",
       "import Layout from '@/components/layout/Layout';",
       "import Seo from '@/components/Seo';\n",
       "$0\n",
@@ -136,11 +137,9 @@
       "    <Seo templateTitle='${1}' />",
       "    <main>",
       "      <section className=''>",
-      "        <div className='layout'>",
+      "        <div className='layout min-h-c'>",
       "          <Breadcrumbs />",
-      "          <div className='prose lg:prose-lg min-h-c'>",
-      "            {children}",
-      "          </div>",
+      "          <div className='w-c min-h-c prose lg:prose-lg'>{children}</div>",
       "        </div>",
       "      </section>",
       "    </main>",
