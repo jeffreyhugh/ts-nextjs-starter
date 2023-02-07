@@ -16,12 +16,13 @@ The full list of features is on [starter.jh.ms/features](https://starter.jh.ms/f
 - React Hot Toast
 - Open Graph
 - Code Snippets
+- Opinionated CSS Utility Classes
 - Custom Anchor Tags
 - Prettier
-- GitHub Actions
+- Drone CI Lint and Deploy
 - Conventional Commits
 
-Plus everything else in Theodorus Clarence's starter.
+Plus most everything else in Theodorus Clarence's starter.
 
 ## Usage
 

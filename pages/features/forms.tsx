@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
@@ -22,11 +22,11 @@ export default function Page() {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit = handleSubmit((data) => {
     toast.success('Check the console');
     // eslint-disable-next-line no-console
     console.log(data);
-  };
+  });
 
   return (
     <Layout>
@@ -38,10 +38,7 @@ export default function Page() {
             <Breadcrumbs />
             <div className='min-h-c'>
               <h1 className='h1'>Forms</h1>
-              <form
-                className='form-control mt-6 md:w-128'
-                onSubmit={handleSubmit(onSubmit)}
-              >
+              <form className='form-control mt-6 md:w-128' onSubmit={onSubmit}>
                 <div>
                   <label htmlFor='firstName' className='label'>
                     <span className='label-text'>First Name</span>
@@ -99,9 +96,9 @@ export default function Page() {
                     <option value='' className='hidden'>
                       &#8203;Choose...
                     </option>
-                    <option value='cat'>Cat</option>
-                    <option value='dog'>Dog</option>
-                    <option value='hamster'>Hamster</option>
+                    <option value='cat' label='Cat' />
+                    <option value='dog' label='Dog' />
+                    <option value='hamster' label='Hamster' />
                   </select>
                   <label htmlFor='bestAnimal' className='label'>
                     <span className='label-text-alt text-error'>
