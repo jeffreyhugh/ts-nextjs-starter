@@ -35,7 +35,7 @@ There are several different ways to start your project with this repo.
 2. Using `create-next-app`
 
 ```bash
-  npx create-next-app -e https://github.com/jeffreyhugh/starter project-name
+npx create-next-app -e https://github.com/jeffreyhugh/starter project-name
 ```
 
 3. Deploy to Vercel
@@ -45,7 +45,7 @@ There are several different ways to start your project with this repo.
 4. Use `git`
 
 ```bash
-  git clone https://github.com/jeffreyhugh/starter.git
+git clone https://github.com/jeffreyhugh/starter.git
 ```
 
 ### 2. Install dependencies
